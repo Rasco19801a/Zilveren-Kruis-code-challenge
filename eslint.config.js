@@ -6,28 +6,28 @@ import { defineConfig } from 'eslint/config';
 import pluginPrettier from 'eslint-plugin-prettier/recommended';
 
 export default defineConfig([
-    {
-        files: ['**/*.{js,mjs,cjs,ts,vue}'],
-        plugins: { js },
-        extends: ['js/recommended']
-    },
-    {
-        files: ['**/*.{js,mjs,cjs,ts,vue}'],
-        languageOptions: { globals: { ...globals.browser, ...globals.node } }
-    },
-    tseslint.configs.recommended,
-    pluginVue.configs['flat/essential'],
-    {
-        files: ['**/*.vue'],
-        languageOptions: { parserOptions: { parser: tseslint.parser } }
-    },
-    pluginPrettier,
-    {
-        rules: {
-            'prettier/prettier': 'warn'
-        }
-    },
-    {
-        ignores: ['**/node_modules', '**/dist', '**/coverage']
-    }
+	{
+		files: ['**/*.{js,mjs,cjs,ts,vue}'],
+		plugins: { js },
+		extends: ['js/recommended']
+	},
+	{
+		files: ['**/*.{js,mjs,cjs,ts,vue}'],
+		languageOptions: { globals: { ...globals.browser, ...globals.node } }
+	},
+	tseslint.configs.recommended,
+	pluginVue.configs['flat/essential'],
+	{
+		files: ['**/*.vue'],
+		languageOptions: { parserOptions: { parser: tseslint.parser } }
+	},
+	pluginPrettier,
+	{
+		rules: {
+			'prettier/prettier': 'warn'
+		}
+	},
+	{
+		ignores: ['**/node_modules', '**/dist', '**/coverage']
+	}
 ]);
